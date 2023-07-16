@@ -81,26 +81,47 @@ const Application = () => {
           >
             <Grid>
               <Grid.Col span={8}>
-                <p className={clsx(["text-xl font-bold", mono.className])}>
-                  <span className="text-[#01a9a0]">Applicant ID: PX0002</span>
-                </p>
+              <p className={clsx(["text-xl font-bold", mono.className, "mb-4"])}>
+               <span className="text-[#01a9a0]">Applicant ID: PX0002</span>
+              </p>
+
                 <Image src="/images/resume.png" alt="Resume" width={500} height={500} />
               </Grid.Col>
               {/* <StatsGrid data={statsData} /> */}
 
               {/* <SuggestionPaper /> */}
               <Grid.Col span={4}>
-                <GeneralCard title="Software Engineer" num={70} numShow="70%" description="This applicant has 70% match to this job"></GeneralCard>
-                <GeneralCard title="Software Engineer" num={70} numShow="70%" description="This applicant has 70% match to this job"></GeneralCard>
-                <GeneralCard title="Software Engineer" num={70} numShow="70%" description="This applicant has 70% match to this job"></GeneralCard>
-              </Grid.Col>
+  <GeneralCard
+    title="Software Engineer"
+    num={70}
+    numShow="70%"
+    description="Strong alignment with job requirements, showcasing relevant technical skills and industry experience. Matching score of 70% indicates a substantial match to the position."
+  />
+  <GeneralCard
+    title="Frontend Developer"
+    num={50}
+    numShow="50%"
+    description="Moderate alignment with job requirements, possessing a solid foundation in frontend technologies and some web development experience."
+  />
+  <GeneralCard
+    title="Backend Developer"
+    num={20}
+    numShow="20%"
+    description="Relatively low alignment with job requirements, limited experience and expertise in backend technologies."
+  />
+</Grid.Col>
+
             </Grid>
+            <p className={clsx(["text-xl font-bold mt-4 mb-4", mono.className])}>
+            <span className="text-[#01a9a0]">Applicant Compatibility</span>
+            </p>
+
             <Grid>
               <Grid.Col span={6}>
                 <ProgressCard title="Github" main="Repository" mainNum={35} progress="A+" progressValue={89} progressText="Score" stats={[{ value: 50, label: "Stars" }]}></ProgressCard>
               </Grid.Col>
               <Grid.Col span={6}>
-                <ProgressCard title="LeetCode" main="Repository" mainNum={35} progress="A+" progressValue={89} progressText="Score" stats={[{ value: 50, label: "Stars" }]}></ProgressCard>
+                <ProgressCard title="LeetCode" main="Repository" mainNum={90} progress="A" progressValue={80} progressText="Score" stats={[{ value: 40, label: "Level" }]}></ProgressCard>
               </Grid.Col>
             </Grid>
           </Stepper.Step>
