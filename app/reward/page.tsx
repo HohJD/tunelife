@@ -5,6 +5,7 @@ import clsx from "clsx";
 import { Gift, MoveDownRight, MoveUpRight, Swords } from "lucide-react";
 import Image from "next/image";
 import React, { useState } from "react";
+import { StatsGrid } from "@/components/statsGrid";
 
 const tabs = ["Recommended", "All", "Health", "Workout", "Relax", "Eat"];
 

@@ -5,32 +5,46 @@ import clsx from 'clsx';
 
 const StepperComponent = () => {
   const [active, setActive] = useState(1);
-  const nextStep = () => setActive((current) => (current < 3 ? current + 1 : current));
-  const prevStep = () => setActive((current) => (current > 0 ? current - 1 : current));
+  const nextStep = () => setActive((current) => (current < 5 ? current + 1 : current));
+  const prevStep = () => setActive((current) => (current > 1 ? current - 1 : current));
 
   return (
     <>
       <Stepper active={active} onStepClick={setActive} breakpoint="sm" className={satoshi.className}>
         <Stepper.Step
-          label="First step"
-          description="Create an account"
+          label="Step 1"
+          description="Applicants Resume Matching"
           className={clsx([mono.className, satoshi.className])}
         >
-          Step 1 content: Create an account
+          Step 1: AI Resume Screening
         </Stepper.Step>
         <Stepper.Step
-          label="Second step"
-          description="Verify email"
+          label="Step 2"
+          description="HR Interview"
           className={clsx([mono.className, satoshi.className])}
         >
-          Step 2 content: Verify email
+          Step 2: Schedule HR Interview
+        </Stepper.Step>
+        <Stepper.Step
+          label="Step 3"
+          description="Interview with Team's Manager"
+          className={clsx([mono.className, satoshi.className])}
+        >
+          Step 3: Schedule Manager Interview
+        </Stepper.Step>
+        <Stepper.Step
+          label="Step 4"
+          description="Final Interview by Leadership Team"
+          className={clsx([mono.className, satoshi.className])}
+        >
+          Step 4: Schedule Leadership Team Interview
         </Stepper.Step>
         <Stepper.Step
           label="Final step"
-          description="Get full access"
+          description="Application Decision"
           className={clsx([mono.className, satoshi.className])}
         >
-          Step 3 content: Get full access
+          Step 5: Decision
         </Stepper.Step>
       </Stepper>
 

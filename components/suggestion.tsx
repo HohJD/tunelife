@@ -26,9 +26,6 @@ import {
   
     return (
       <Paper p="lg" shadow="sm">
-        <Title order={5} mb="md">
-          SC Advice
-        </Title>
         <SegmentedControl
           mb="lg"
           value={selectedValue}

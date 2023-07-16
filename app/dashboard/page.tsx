@@ -19,7 +19,13 @@ const Dashboard = () => {
             <span>ard</span>
           </p>
         </div>
+        <p className={clsx(["text-xl font-bold", mono.className])}>
+            <span className="text-[#01a9a0]">Overview</span>
+          </p>
         <Line />
+        <p className={clsx(["text-xl font-bold", mono.className])}>
+            <span className="text-[#01a9a0]">List of Applicants</span>
+          </p>
         <TableSort
   data={[
     { id: "PX0001", name: "John Doe", email: "john@example.com", role: "Software Engineer", status: "Stage 5", recruiter: "Azad", priority: "High" },
@@ -36,8 +42,7 @@ const Dashboard = () => {
   ]}
 />
 
-        <Pie />
-        <Stacked />
+       
       </section>
     </main>
   );

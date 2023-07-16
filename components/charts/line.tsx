@@ -13,20 +13,20 @@ const data = [
   {
     Month: "Jan 21",
     "Total Applications": 2890,
-    "Happiness Level": 2400,
+    "Total Hired": 2400,
     "Total Quest Completed": 4938,
   },
   {
     Month: "Feb 22",
-    "Total Participation": 1890,
-    "Happiness Level": 1398,
+    "Total Applications": 1890,
+    "Total Hired": 1398,
     "Total Quest Completed": 2938,
   },
   // ...
   {
     Month: "Jul 23",
-    "Total Participation": 3490,
-    "Happiness Level": 4300,
+    "Total Applications": 3490,
+    "Total Hired": 4300,
     "Total Quest Completed": 2345,
   },
 ];
@@ -40,7 +40,7 @@ const categories: {
   color: string | any;
 }[] = [
   {
-    title: "Total Participation",
+    title: "Total Applications",
     metric: "45",
     metricPrev: "38",
     delta: "34.3%",
@@ -48,7 +48,7 @@ const categories: {
     color: "green",
   },
   {
-    title: "Happiness Level",
+    title: "Total Hired",
     metric: "82",
     metricPrev: "68",
     delta: "18.1%",
@@ -56,7 +56,7 @@ const categories: {
     color: "green",
   },
   {
-    title: "Total Quest Completed",
+    title: "Total Hired",
     metric: "90",
     metricPrev: "143",
     delta: "12.3%",

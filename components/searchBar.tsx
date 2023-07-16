@@ -1,38 +1,44 @@
 import { useState } from 'react';
-import {
-  createStyles,
-  Table,
-  ScrollArea,
-  UnstyledButton,
-  Group,
-  Text,
-  Center,
-  TextInput,
-  rem,
-} from '@mantine/core';
+import { createStyles, Table, ScrollArea, UnstyledButton, Group, Text, Center, TextInput, rem } from '@mantine/core';
 import { keys } from '@mantine/utils';
 import { IconSelector, IconChevronDown, IconChevronUp, IconSearch } from '@tabler/icons-react';
+import Link from 'next/link';
 
 const useStyles = createStyles((theme) => ({
   th: {
     padding: '0 !important',
   },
-
   control: {
     width: '100%',
     padding: `${theme.spacing.xs} ${theme.spacing.md}`,
-
     '&:hover': {
       backgroundColor: theme.colorScheme === 'dark' ? theme.colors.dark[6] : theme.colors.gray[0],
     },
   },
-
   icon: {
     width: rem(21),
     height: rem(21),
     borderRadius: rem(21),
   },
+  priorityLow: {
+    color: theme.colors.green[7],
+  },
+  priorityMedium: {
+    color: theme.colors.yellow[7],
+  },
+  priorityHigh: {
+    color: theme.colors.red[7],
+  },
 }));
+
+type Classes = {
+  th: string;
+  control: string;
+  icon: string;
+  priorityLow: string;
+  priorityMedium: string;
+  priorityHigh: string;
+};
 
 interface RowData {
   id: string;
@@ -122,16 +128,34 @@ export function TableSort({ data }: TableSortProps) {
     setSortedData(sortData(data, { sortBy, reversed: reverseSortDirection, search: value }));
   };
 
+  const getPriorityClass = (priority: string): keyof Classes => {
+    switch (priority) {
+      case 'low':
+        return 'priorityLow';
+      case 'medium':
+        return 'priorityMedium';
+      case 'high':
+        return 'priorityHigh';
+      default:
+        return '' as keyof Classes;
+    }
+  };
+
+  const { classes } = useStyles();
+
   const rows = sortedData.map((row) => (
     <tr key={row.name}>
       <td>{row.id}</td>
       <td>{row.name}</td>
       <td>{row.email}</td>
-      <td>{row.role}</td>
+      <td>
+        <Link href="/application" passHref>
+          {row.role}
+        </Link>
+      </td>
       <td>{row.status}</td>
       <td>{row.recruiter}</td>
-      <td>{row.priority}</td>
-    
+      <td className={classes[getPriorityClass(row.priority)]}>{row.priority}</td>
     </tr>
   ));
 
@@ -147,7 +171,7 @@ export function TableSort({ data }: TableSortProps) {
       <Table horizontalSpacing="md" verticalSpacing="xs" miw={700} sx={{ tableLayout: 'fixed' }}>
         <thead>
           <tr>
-          <Th
+            <Th
               sorted={sortBy === 'id'}
               reversed={reverseSortDirection}
               onSort={() => setSorting('id')}
