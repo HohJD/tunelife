@@ -43,7 +43,6 @@ type Classes = {
 interface RowData {
   id: string;
   name: string;
-  email: string;
   role: string;
   status: string;
   recruiter: string;
@@ -147,7 +146,6 @@ export function TableSort({ data }: TableSortProps) {
     <tr key={row.name}>
       <td>{row.id}</td>
       <td>{row.name}</td>
-      <td>{row.email}</td>
       <td>
         <Link href="/application" passHref>
           {row.role}
@@ -185,13 +183,7 @@ export function TableSort({ data }: TableSortProps) {
             >
               Name
             </Th>
-            <Th
-              sorted={sortBy === 'email'}
-              reversed={reverseSortDirection}
-              onSort={() => setSorting('email')}
-            >
-              Email
-            </Th>
+            
             <Th
               sorted={sortBy === 'role'}
               reversed={reverseSortDirection}
