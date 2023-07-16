@@ -49,7 +49,7 @@ interface progressCardProps {
   }[];
 }
 
-export function progressCard({ title, main, mainNum, progress, progressValue, progressText, stats }: progressCardProps) {
+export function ProgressCard({ title, main, mainNum, progress, progressValue, progressText, stats }: progressCardProps) {
   const { classes, theme } = useStyles();
   const items = stats.map((stat) => (
     <div key={stat.label}>

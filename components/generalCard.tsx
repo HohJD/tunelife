@@ -8,7 +8,7 @@ interface generalCardProps {
   }
 
   
-export function generalCard({title, num, numShow, description}: generalCardProps) {
+export function GeneralCard({title, num, numShow, description}: generalCardProps) {
   return (
     <Card
       withBorder

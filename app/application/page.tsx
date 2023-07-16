@@ -1,13 +1,15 @@
 "use client";
 import { useState } from 'react';
-import { Stepper, Button, Group, Paper } from '@mantine/core';
+import { Stepper, Button, Group, Grid } from '@mantine/core';
 import { mono, satoshi } from "@/lib/fonts";
 import clsx from "clsx";
 import { LayoutDashboard } from "lucide-react";
 import SuggestionPaper from "@/components/suggestion";
+import { GeneralCard } from '@/components/generalCard';
+import { ProgressCard } from '@/components/progressCard';
 
 const Application = () => {
-  const [active, setActive] = useState(1);
+  const [active, setActive] = useState(0);
   const nextStep = () => setActive((current) => (current < 3 ? current + 1 : current));
   const prevStep = () => setActive((current) => (current > 0 ? current - 1 : current));
 
@@ -28,7 +30,22 @@ const Application = () => {
             description="Create an account"
             className={clsx([mono.className, satoshi.className])}
           >
-            Step 1 content: Create an account
+            <Grid>
+              <Grid.Col span={8}>1</Grid.Col>
+              <Grid.Col span={4}>
+                <GeneralCard title="Software Engineer" num={70} numShow="70%" description="This applicant has 70% match to this job"></GeneralCard>
+                <GeneralCard title="Software Engineer" num={70} numShow="70%" description="This applicant has 70% match to this job"></GeneralCard>
+                <GeneralCard title="Software Engineer" num={70} numShow="70%" description="This applicant has 70% match to this job"></GeneralCard>
+              </Grid.Col>
+            </Grid>
+            <Grid>
+            <Grid.Col span={6}>
+              <ProgressCard title="Github" main="Repository" mainNum={35} progress="A+" progressValue={89} progressText="Score" stats={[{value:50,label:"Stars"}]}></ProgressCard>
+            </Grid.Col>
+            <Grid.Col span={6}>
+            <ProgressCard title="LeetCode" main="Repository" mainNum={35} progress="A+" progressValue={89} progressText="Score" stats={[{value:50,label:"Stars"}]}></ProgressCard>
+            </Grid.Col>
+              </Grid>
           </Stepper.Step>
           <Stepper.Step
             label="Second step"
