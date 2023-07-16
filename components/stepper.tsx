@@ -10,39 +10,39 @@ const StepperComponent = () => {
 
   return (
     <>
-      <Stepper active={active} onStepClick={setActive} breakpoint="sm" className={satoshi.className}>
+      <Stepper active={active} onStepClick={setActive} breakpoint="sm">
         <Stepper.Step
           label="Step 1"
           description="Applicants Resume Matching"
-          className={clsx([mono.className, satoshi.className])}
+          // className={clsx([mono.className, satoshi.className])}
         >
           Step 1: AI Resume Screening
         </Stepper.Step>
         <Stepper.Step
           label="Step 2"
           description="HR Interview"
-          className={clsx([mono.className, satoshi.className])}
+          // className={clsx([mono.className, satoshi.className])}
         >
           Step 2: Schedule HR Interview
         </Stepper.Step>
         <Stepper.Step
           label="Step 3"
           description="Interview with Team's Manager"
-          className={clsx([mono.className, satoshi.className])}
+          // className={clsx([mono.className, satoshi.className])}
         >
           Step 3: Schedule Manager Interview
         </Stepper.Step>
         <Stepper.Step
           label="Step 4"
           description="Final Interview by Leadership Team"
-          className={clsx([mono.className, satoshi.className])}
+          // className={clsx([mono.className, satoshi.className])}
         >
           Step 4: Schedule Leadership Team Interview
         </Stepper.Step>
         <Stepper.Step
           label="Final step"
           description="Application Decision"
-          className={clsx([mono.className, satoshi.className])}
+          // className={clsx([mono.className, satoshi.className])}
         >
           Step 5: Decision
         </Stepper.Step>

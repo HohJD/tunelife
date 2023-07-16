@@ -1,12 +1,14 @@
 "use client";
 import { useState } from 'react';
-import { Stepper, Button, Group, Paper, Image, Card } from '@mantine/core';
+import { Stepper, Button, Group, Paper, Image, Card, Grid } from '@mantine/core';
 import { mono, satoshi } from "@/lib/fonts";
 import clsx from "clsx";
 import { LayoutDashboard } from "lucide-react";
 import SuggestionPaper from "@/components/suggestion";
 import { StatsGrid } from '@/components/statsGrid';
 import { ContainedInputs } from '@/components/input';
+import { GeneralCard } from '@/components/generalCard';
+import { ProgressCard } from '@/components/progressCard';
 
 const statsData = [
   {
@@ -56,15 +58,15 @@ const rewards = [
   },
 ];
 const Application = () => {
-  const [active, setActive] = useState(1);
-  const nextStep = () => setActive((current) => (current < 3 ? current + 1 : current));
+  const [active, setActive] = useState(0);
+  const nextStep = () => setActive((current) => (current < 5 ? current + 1 : current));
   const prevStep = () => setActive((current) => (current > 0 ? current - 1 : current));
 
   return (
-    <main className={clsx(["pb-10 pt-5 flex flex-col max-w-5xl mx-auto px-2", satoshi.className])}>
+    <main className={clsx(["pb-10 pt-5 flex flex-col max-w-6xl mx-auto px-2", satoshi.className])}>
       <section className="w-full space-y-10">
         <div className="flex items-center gap-3 mb-8">
-          <LayoutDashboard className="text-[#01a9a0] w-5 h-5" />
+          <LayoutDashboard className="text-[#01a9a0] w-8 h-8" />
           <p className={clsx(["text-xl font-bold", mono.className])}>
             <span className="text-[#01a9a0]">Application</span>
             <span>Details</span>
@@ -77,39 +79,57 @@ const Application = () => {
             description="Applicants Resume Matching"
             className={clsx([mono.className, satoshi.className])}
           >
-            <p className={clsx(["text-xl font-bold", mono.className])}>
-            <span className="text-[#01a9a0]">Applicant ID: PX0002</span>
-          </p>
-            <Image src="/images/resume.png" alt="Resume" width={500} height={500} />
-            <StatsGrid data={statsData} />
-            <SuggestionPaper />
+            <Grid>
+              <Grid.Col span={8}>
+                <p className={clsx(["text-xl font-bold", mono.className])}>
+                  <span className="text-[#01a9a0]">Applicant ID: PX0002</span>
+                </p>
+                <Image src="/images/resume.png" alt="Resume" width={500} height={500} />
+              </Grid.Col>
+              {/* <StatsGrid data={statsData} /> */}
+
+              {/* <SuggestionPaper /> */}
+              <Grid.Col span={4}>
+                <GeneralCard title="Software Engineer" num={70} numShow="70%" description="This applicant has 70% match to this job"></GeneralCard>
+                <GeneralCard title="Software Engineer" num={70} numShow="70%" description="This applicant has 70% match to this job"></GeneralCard>
+                <GeneralCard title="Software Engineer" num={70} numShow="70%" description="This applicant has 70% match to this job"></GeneralCard>
+              </Grid.Col>
+            </Grid>
+            <Grid>
+              <Grid.Col span={6}>
+                <ProgressCard title="Github" main="Repository" mainNum={35} progress="A+" progressValue={89} progressText="Score" stats={[{ value: 50, label: "Stars" }]}></ProgressCard>
+              </Grid.Col>
+              <Grid.Col span={6}>
+                <ProgressCard title="LeetCode" main="Repository" mainNum={35} progress="A+" progressValue={89} progressText="Score" stats={[{ value: 50, label: "Stars" }]}></ProgressCard>
+              </Grid.Col>
+            </Grid>
           </Stepper.Step>
           <Stepper.Step
             label="2nd Stage"
             description="HR Interview"
             className={clsx([mono.className, satoshi.className])}
           >
-          <div className="mb-4">
-  <Card shadow="sm" padding="lg">
-    <p className={clsx(["text-xl font-bold", mono.className])}>
-      <span className="text-[#01a9a0]">Assigned Interviewer: En Azad</span>
-    </p>
-    <p className="font-normal text-gray-700 my-tune:text-gray-400 mb-2">
-      Candidate Name: Oscar Ling
-    </p>
-    <p className="font-normal text-gray-700 my-tune:text-gray-400 mb-2">
-      Role: Software Engineer
-    </p>
-    <p className="font-normal text-gray-700 my-tune:text-gray-400 mb-2">
-      Current Stage: Stage 2
-    </p>
-    <Button variant="default" onClick={nextStep} className={mono.className}>
-      View Resume
-    </Button>
-  </Card>
-</div>
+            <div className="mb-4">
+              <Card shadow="sm" padding="lg">
+                <p className={clsx(["text-xl font-bold", mono.className])}>
+                  <span className="text-[#01a9a0]">Assigned Interviewer: En Azad</span>
+                </p>
+                <p className="font-normal text-gray-700 my-tune:text-gray-400 mb-2">
+                  Candidate Name: Oscar Ling
+                </p>
+                <p className="font-normal text-gray-700 my-tune:text-gray-400 mb-2">
+                  Role: Software Engineer
+                </p>
+                <p className="font-normal text-gray-700 my-tune:text-gray-400 mb-2">
+                  Current Stage: Stage 2
+                </p>
+                <Button variant="default" onClick={nextStep} className={mono.className}>
+                  View Resume
+                </Button>
+              </Card>
+            </div>
 
-          <ContainedInputs/>
+            <ContainedInputs />
           </Stepper.Step>
           <Stepper.Step
             label="3rd Stage"
@@ -123,14 +143,14 @@ const Application = () => {
             description="Leadership Team Interview"
             className={clsx([mono.className, satoshi.className])}
           >
-            Step 3 content: Get full access
+            Step 4 content: Get full access
           </Stepper.Step>
           <Stepper.Step
             label="Final Stage"
             description="Approval Stage"
             className={clsx([mono.className, satoshi.className])}
           >
-            Step 3 content: Get full access
+            Step 5 content: Get full access
           </Stepper.Step>
         </Stepper>
 
