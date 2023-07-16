@@ -33,9 +33,6 @@ export function ContainedInputs() {
 
   return (
     <div>
-      <TextInput label="Shipping address" placeholder="15329 Huston 21st" classNames={classes} />
-
-      
       <DateTimePicker
         mt="md"
         popoverProps={{ withinPortal: true }}
