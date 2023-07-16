@@ -157,21 +157,81 @@ const Application = () => {
             description="Team Manager Interview"
             className={clsx([mono.className, satoshi.className])}
           >
-            Step 3 content: Get full access
+            <div className="mb-4">
+              <Card shadow="sm" padding="lg">
+                <p className={clsx(["text-xl font-bold", mono.className])}>
+                  <span className="text-[#01a9a0]">Assigned Interviewer: Ms Vinslet</span>
+                </p>
+                <p className="font-normal text-gray-700 my-tune:text-gray-400 mb-2">
+                  Candidate Name: Oscar Ling
+                </p>
+                <p className="font-normal text-gray-700 my-tune:text-gray-400 mb-2">
+                  Role: Software Engineer
+                </p>
+                <p className="font-normal text-gray-700 my-tune:text-gray-400 mb-2">
+                  Current Stage: Stage 3
+                </p>
+                <Button variant="default" onClick={nextStep} className={mono.className}>
+                  View Resume
+                </Button>
+              </Card>
+            </div>
+
+            <ContainedInputs />
           </Stepper.Step>
           <Stepper.Step
             label="4th Stage"
             description="Leadership Team Interview"
             className={clsx([mono.className, satoshi.className])}
           >
-            Step 4 content: Get full access
+            <div className="mb-4">
+              <Card shadow="sm" padding="lg">
+                <p className={clsx(["text-xl font-bold", mono.className])}>
+                  <span className="text-[#01a9a0]">Assigned Interviewer: Pn Rohaizal</span>
+                </p>
+                <p className="font-normal text-gray-700 my-tune:text-gray-400 mb-2">
+                  Candidate Name: Oscar Ling
+                </p>
+                <p className="font-normal text-gray-700 my-tune:text-gray-400 mb-2">
+                  Role: Software Engineer
+                </p>
+                <p className="font-normal text-gray-700 my-tune:text-gray-400 mb-2">
+                  Current Stage: Stage 4
+                </p>
+                <Button variant="default" onClick={nextStep} className={mono.className}>
+                  View Resume
+                </Button>
+              </Card>
+            </div>
+
+            <ContainedInputs />
           </Stepper.Step>
           <Stepper.Step
             label="Final Stage"
             description="Approval Stage"
             className={clsx([mono.className, satoshi.className])}
           >
-            Step 5 content: Get full access
+            <div className="mb-4">
+              <Card shadow="sm" padding="lg">
+                <p className={clsx(["text-xl font-bold", mono.className])}>
+                  <span className="text-[#01a9a0]">Assigned Interviewer: En Ahmad</span>
+                </p>
+                <p className="font-normal text-gray-700 my-tune:text-gray-400 mb-2">
+                  Candidate Name: Oscar Ling
+                </p>
+                <p className="font-normal text-gray-700 my-tune:text-gray-400 mb-2">
+                  Role: Software Engineer
+                </p>
+                <p className="font-normal text-gray-700 my-tune:text-gray-400 mb-2">
+                  Current Stage: Stage 5
+                </p>
+                <Button variant="default" onClick={nextStep} className={mono.className}>
+                  View Resume
+                </Button>
+              </Card>
+            </div>
+
+            <ContainedInputs />
           </Stepper.Step>
         </Stepper>
 
