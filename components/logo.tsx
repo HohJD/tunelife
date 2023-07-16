@@ -11,7 +11,7 @@ export default function Logo({ className }: any) {
         alt="logo"
         width={50}
         height={50}
-        className={clsx(["rounded-md", className])}
+        className={clsx([className])}
       />
     </Link>
   );

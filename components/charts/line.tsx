@@ -12,7 +12,7 @@ import {
 const data = [
   {
     Month: "Jan 21",
-    "Total Participation": 2890,
+    "Total Applications": 2890,
     "Happiness Level": 2400,
     "Total Quest Completed": 4938,
   },

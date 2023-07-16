@@ -6,9 +6,9 @@ import Nav from "@/components/nav";
 import BottomNavigationBar from "@/components/bottomNavigationBar";
 
 export const metadata = {
-  title: "Tune Life",
+  title: "Petronas Career",
   description:
-    "A customer loyalty program that improves the engagement of the insurers",
+    "Secure your dream job with Petronas",
 };
 
 export default function RootLayout({

@@ -17,16 +17,6 @@ const Nav: FC<NavProps> = () => {
   return (
     <nav className="justify-between layout">
       <Logo />
-      {pathname !== "a" && (
-        <Link href="/reward" className="flex items-center gap-2">
-          <div className="w-8 h-8">
-            <Coin />
-          </div>
-          <div className={clsx([mono.className], "font-bold text-[#ff0000]")}>
-            20
-          </div>
-        </Link>
-      )}
     </nav>
   );
 };
